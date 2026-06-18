@@ -1,0 +1,237 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
+    color:white;
+}
+
+/* =========================
+   PARTÍCULAS
+========================= */
+
+#particles{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:-1;
+    pointer-events:none;
+}
+
+/* garante conteúdo acima */
+header, nav, section, footer{
+    position:relative;
+    z-index:2;
+}
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+.cabecalho{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:60px;
+
+    width:90%;
+    margin:30px auto;
+
+    padding:25px;
+
+    background:rgba(255,255,255,0.07);
+    backdrop-filter:blur(10px);
+
+    border-radius:25px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+
+    animation:fadeIn 1s ease-in-out;
+}
+
+/* =========================
+   LOGO IFTO (ANIMAÇÃO ORIGINAL MELHORADA)
+========================= */
+
+.logo-ifto{
+    width:160px;
+    animation:flutuar 3s ease-in-out infinite;
+    transition:0.3s;
+}
+
+.logo-ifto:hover{
+    transform:scale(1.1);
+}
+
+@keyframes flutuar{
+    0%{ transform:translateY(0px); }
+    50%{ transform:translateY(-12px); }
+    100%{ transform:translateY(0px); }
+}
+
+/* =========================
+   FOTO PERFIL (ANIMAÇÃO)
+========================= */
+
+.foto-perfil{
+    width:220px;
+    height:220px;
+    border-radius:50%;
+    object-fit:cover;
+
+    border:5px solid white;
+
+    box-shadow:0 0 20px rgba(34,197,94,0.4);
+
+    transition:0.4s;
+}
+
+.foto-perfil:hover{
+    transform:scale(1.05) rotate(2deg);
+}
+
+/* =========================
+   TEXTO
+========================= */
+
+.texto-area{
+    flex:1;
+    text-align:center;
+}
+
+.texto-area h1{
+    font-size:50px;
+    animation:fadeIn 1.5s ease-in-out;
+}
+
+.texto-area p{
+    font-size:18px;
+    opacity:0.9;
+}
+
+/* =========================
+   MENU
+========================= */
+
+nav{
+    background:rgba(0,0,0,0.3);
+    backdrop-filter:blur(10px);
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+nav ul{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    list-style:none;
+    padding:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+    transition:0.3s;
+}
+
+nav a:hover{
+    color:#22c55e;
+    transform:scale(1.1);
+}
+
+/* =========================
+   SEÇÕES (NÃO SUME MAIS TEXTO)
+========================= */
+
+section{
+    width:80%;
+    margin:30px auto;
+    padding:30px;
+
+    background:rgba(255,255,255,0.06);
+    backdrop-filter:blur(8px);
+
+    border-radius:20px;
+
+    animation:fadeUp 1s ease-in-out;
+}
+
+section h2{
+    margin-bottom:15px;
+    font-size:28px;
+}
+
+section p, section li{
+    font-size:18px;
+    color:rgba(255,255,255,0.9);
+}
+
+/* =========================
+   REDES SOCIAIS
+========================= */
+
+.cards-redes{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-top:20px;
+}
+
+.cards-redes a{
+    background:white;
+    color:black;
+
+    width:160px;
+    padding:20px;
+
+    border-radius:15px;
+
+    text-align:center;
+    text-decoration:none;
+
+    transition:0.3s;
+}
+
+.cards-redes a:hover{
+    transform:translateY(-10px) scale(1.05);
+}
+
+.cards-redes img{
+    width:55px;
+    margin-bottom:10px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+    text-align:center;
+    padding:25px;
+    margin-top:40px;
+    background:#111827;
+}
+
+/* =========================
+   ANIMAÇÕES GLOBAIS
+========================= */
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(-10px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(20px);}
+    to{opacity:1; transform:translateY(0);}
+}

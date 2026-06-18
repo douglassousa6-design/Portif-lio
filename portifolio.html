@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Portfólio | Douglas Silvino</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- =========================
+     FUNDO DE PARTÍCULAS
+========================= -->
+<canvas id="particles"></canvas>
+
+<!-- =========================
+     CABEÇALHO
+========================= -->
+<header>
+
+    <div class="cabecalho">
+
+        <!-- LOGO IFTO -->
+        <div class="logo-area">
+            <img 
+                src="https://portal.ifto.edu.br/imagens/identidade-visual/marca-ifto-assinatura-2.png"
+                alt="Logo IFTO"
+                class="logo-ifto">
+        </div>
+
+        <!-- FOTO PERFIL -->
+        <div class="foto-area">
+            <img 
+                src="foto.jpeg"
+                alt="Douglas Silvino"
+                class="foto-perfil">
+        </div>
+
+        <!-- TEXTO -->
+        <div class="texto-area">
+
+            <h1>Douglas Silvino</h1>
+            <p>Estudante do IFTO - Campus Formoso do Araguaia</p>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- =========================
+     MENU
+========================= -->
+<nav>
+
+    <ul>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#atuacao">Atuação</a></li>
+        <li><a href="#conquistas">Conquistas</a></li>
+        <li><a href="#objetivo">Objetivo</a></li>
+        <li><a href="#redes">Redes Sociais</a></li>
+    </ul>
+
+</nav>
+
+<!-- =========================
+     SOBRE
+========================= -->
+<section id="sobre">
+    <h2>Sobre Mim</h2>
+    <p>Sou estudante do IFTO e gosto de tecnologia, programação e educação.</p>
+</section>
+
+<!-- =========================
+     ATUAÇÃO
+========================= -->
+<section id="atuacao">
+    <h2>Atuação</h2>
+    <ul>
+        <li>Monitor</li>
+        <li>Pesquisador</li>
+        <li>Estudante comunicador</li>
+    </ul>
+</section>
+
+<!-- =========================
+     CONQUISTAS
+========================= -->
+<section id="conquistas">
+    <h2>Conquistas</h2>
+    <p>Medalhista na ONC e outras olimpíadas acadêmicas.</p>
+</section>
+
+<!-- =========================
+     OBJETIVO
+========================= -->
+<section id="objetivo">
+    <h2>Objetivo</h2>
+    <p>Ser professor de Matemática no Instituto Federal.</p>
+</section>
+
+<!-- =========================
+     REDES SOCIAIS
+========================= -->
+<section id="redes">
+
+    <h2>Redes Sociais</h2>
+
+    <p>Também sou criador de conteúdo digital e compartilho meu dia a dia nas redes sociais.</p>
+
+    <div class="cards-redes">
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png">
+            <p>Instagram</p>
+        </a>
+
+        <!-- YouTube -->
+        <a href="https://www.youtube.com/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/3670/3670147.png">
+            <p>YouTube</p>
+        </a>
+
+        <!-- TikTok -->
+        <a href="https://www.tiktok.com/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/3046/3046121.png">
+            <p>TikTok</p>
+        </a>
+
+        <!-- Kwai -->
+        <a href="https://k.kwai.com/u/@douglassilvino091/zGf0Cn9B" target="_blank">
+            <img src="https://static.vecteezy.com/system/resources/previews/054/298/853/non_2x/kwai-logo-illustration-in-square-background-free-png.png">
+            <p>Kwai</p>
+        </a>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     FOOTER
+========================= -->
+<footer>
+    <p>Portfólio desenvolvido por Douglas Silvino</p>
+</footer>
+
+<!-- =========================
+     PARTÍCULAS SCRIPT
+========================= -->
+<script>
+const canvas = document.getElementById("particles");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let particles = [];
+
+class Particle{
+    constructor(){
+        this.x = Math.random()*canvas.width;
+        this.y = Math.random()*canvas.height;
+        this.size = Math.random()*2+1;
+        this.speedX = Math.random()*0.5-0.25;
+        this.speedY = Math.random()*0.5-0.25;
+    }
+
+    update(){
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if(this.x < 0) this.x = canvas.width;
+        if(this.x > canvas.width) this.x = 0;
+        if(this.y < 0) this.y = canvas.height;
+        if(this.y > canvas.height) this.y = 0;
+    }
+
+    draw(){
+        ctx.fillStyle = "rgba(34,197,94,0.6)";
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+    }
+}
+
+function init(){
+    particles = [];
+    for(let i = 0; i < 80; i++){
+        particles.push(new Particle());
+    }
+}
+
+function animate(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    particles.forEach(p => {
+        p.update();
+        p.draw();
+    });
+    requestAnimationFrame(animate);
+}
+
+init();
+animate();
+
+window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    init();
+});
+</script>
+
+</body>
+</html>
