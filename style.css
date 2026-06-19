@@ -1,9 +1,15 @@
+/* =========================
+   RESET BÁSICO DA PÁGINA
+========================= */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
+/* =========================
+   ESTILO GERAL DO SITE
+========================= */
 body{
     font-family:Arial, sans-serif;
     background:linear-gradient(135deg,#0f172a,#1e293b,#334155);
@@ -11,9 +17,8 @@ body{
 }
 
 /* =========================
-   PARTÍCULAS
+   FUNDO DE PARTÍCULAS
 ========================= */
-
 #particles{
     position:fixed;
     top:0;
@@ -24,42 +29,85 @@ body{
     pointer-events:none;
 }
 
-/* garante conteúdo acima */
+/* garante conteúdo acima do canvas */
 header, nav, section, footer{
     position:relative;
     z-index:2;
 }
 
 /* =========================
-   CABEÇALHO
+   FONTE PERSONALIZADA
+========================= */
+@font-face {
+    font-family: 'Naruto';
+    src: url('./fontes/njnaruto.ttf') format('truetype');
+}
+
+/* =========================
+   TÍTULO PRINCIPAL
 ========================= */
 
+/*h1 {
+    font-family: 'Naruto', sans-serif;
+    font-size: 3rem;
+    color: #ff7b00;
+
+    text-shadow:
+        -3px -3px 0 #000,
+         3px -3px 0 #000,
+        -3px  3px 0 #000,
+         3px  3px 0 #000;
+}*/
+
+h1 {
+    font-family: 'Naruto', sans-serif;
+    font-size: 3rem;
+    color: #ff7b00;
+
+    -webkit-text-stroke: 2px black;
+
+    text-shadow:
+        0 0 10px #22c55e;
+}
+/* =========================
+   SUBTÍTULO
+========================= */
+.subtitulo {
+    color: #00ff00;
+    font-size: 1.2rem;
+
+    text-shadow:
+        -2px -2px 0 #000,
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000;
+}
+
+/* =========================
+   CABEÇALHO DO SITE
+========================= */
 .cabecalho{
     display:flex;
     justify-content:space-between;
     align-items:center;
 
     gap:60px;
-
     width:90%;
     margin:30px auto;
-
     padding:25px;
 
-    background:rgba(8, 72, 250, 0.07);
+    background:rgb(8, 73, 250);
     backdrop-filter:blur(10px);
 
     border-radius:25px;
-
     box-shadow:0 10px 30px rgba(0,0,0,0.4);
 
     animation:fadeIn 1s ease-in-out;
 }
 
 /* =========================
-   LOGO IFTO (ANIMAÇÃO ORIGINAL MELHORADA)
+   LOGO COM ANIMAÇÃO
 ========================= */
-
 .logo-ifto{
     width:160px;
     animation:flutuar 3s ease-in-out infinite;
@@ -70,6 +118,7 @@ header, nav, section, footer{
     transform:scale(1.1);
 }
 
+/* animação de flutuação */
 @keyframes flutuar{
     0%{ transform:translateY(0px); }
     50%{ transform:translateY(-12px); }
@@ -77,9 +126,8 @@ header, nav, section, footer{
 }
 
 /* =========================
-   FOTO PERFIL (ANIMAÇÃO)
+   FOTO DE PERFIL
 ========================= */
-
 .foto-perfil{
     width:220px;
     height:220px;
@@ -87,8 +135,7 @@ header, nav, section, footer{
     object-fit:cover;
 
     border:5px solid white;
-
-    box-shadow:0 0 20px rgba(34,197,94,0.4);
+    box-shadow:0 0 20px rgba(8, 255, 99, 0.867);
 
     transition:0.4s;
 }
@@ -98,30 +145,65 @@ header, nav, section, footer{
 }
 
 /* =========================
-   TEXTO
+   TEXTO DAS SEÇÕES
 ========================= */
 
-.texto-area{
-    flex:1;
-    text-align:center;
+.sobre-texto {
+    font-family: 'Courier New', monospace;
 }
 
-.texto-area h1{
-    font-size:50px;
-    animation:fadeIn 1.5s ease-in-out;
+.atuacao-lista {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #00ff00;
+
+    text-shadow:
+        -2px -2px 0 #000,
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000;
+
+    line-height: 1.8;
 }
 
-.texto-area p{
-    font-size:18px;
-    opacity:0.9;
+.conquistas-texto {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #00ff00;
+
+    text-shadow:
+        -2px -2px 0 #000,
+         2px -2px 0 #000,
+        -2px  2px 0 #000,
+         2px  2px 0 #000;
+
+    line-height: 1.7;
+}
+
+/* caixa de destaque das conquistas */
+.conquistas-box {
+    background: rgba(0, 255, 0, 0.703);
+    border: 2px solid #00ff00;
+    border-radius: 12px;
+
+    padding: 15px;
+    margin-top: 10px;
+
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+
+    text-shadow:
+        -1px -1px 0 #000,
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
 }
 
 /* =========================
-   MENU
+   MENU DE NAVEGAÇÃO
 ========================= */
-
 nav{
-    background:rgba(0,0,0,0.3);
+    background:rgba(41, 10, 243, 0.87);
     backdrop-filter:blur(10px);
     position:sticky;
     top:0;
@@ -148,16 +230,31 @@ nav a:hover{
     transform:scale(1.1);
 }
 
-/* =========================
-   SEÇÕES (NÃO SUME MAIS TEXTO)
-========================= */
+/* sublinhado animado do menu */
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: #22c55e;
+    transition: 0.3s;
+}
 
+nav a:hover::after {
+    width: 100%;
+}
+
+/* =========================
+   SEÇÕES DO SITE
+========================= */
 section{
     width:80%;
     margin:30px auto;
     padding:30px;
 
-    background:rgba(255,255,255,0.06);
+    background:rgba(2, 26, 247, 0.763);
     backdrop-filter:blur(8px);
 
     border-radius:20px;
@@ -165,20 +262,9 @@ section{
     animation:fadeUp 1s ease-in-out;
 }
 
-section h2{
-    margin-bottom:15px;
-    font-size:28px;
-}
-
-section p, section li{
-    font-size:18px;
-    color:rgba(255,255,255,0.9);
-}
-
 /* =========================
-   REDES SOCIAIS
+   CARDS REDES SOCIAIS
 ========================= */
-
 .cards-redes{
     display:flex;
     justify-content:center;
@@ -187,24 +273,31 @@ section p, section li{
     margin-top:20px;
 }
 
+
 .cards-redes a{
     background:white;
-    color:black;
+    color:rgb(77, 239, 8);
+
 
     width:160px;
     padding:20px;
 
+
     border-radius:15px;
+
 
     text-align:center;
     text-decoration:none;
 
+
     transition:0.3s;
 }
+
 
 .cards-redes a:hover{
     transform:translateY(-10px) scale(1.05);
 }
+
 
 .cards-redes img{
     width:55px;
@@ -212,14 +305,13 @@ section p, section li{
 }
 
 /* =========================
-   FOOTER
+   RODAPÉ
 ========================= */
-
 footer{
     text-align:center;
     padding:25px;
     margin-top:40px;
-    background:#111827;
+    background:#04b536;
 }
 
 /* =========================
@@ -235,3 +327,157 @@ footer{
     from{opacity:0; transform:translateY(20px);}
     to{opacity:1; transform:translateY(0);}
 }
+
+/* animação da medalha */
+#efeito-conquista {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6rem;
+    display: none;
+    z-index: 9999;
+    animation: aparecer 1s ease;
+}
+
+/* efeito de aparição da medalha */
+@keyframes aparecer {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.3);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* hover geral de elementos */
+.cards-redes a,
+.projeto,
+.conquistas-box {
+    transition: 0.3s ease;
+}
+
+.cards-redes a:hover,
+.projeto:hover,
+.conquistas-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(248, 133, 2, 0.884);
+}
+
+/* efeito glow no título */
+h1 {
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px #05df55;
+    }
+    to {
+        text-shadow: 0 0 20px #22c55e;
+    }
+}
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+@media (max-width: 768px) {
+    .cabecalho {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    section {
+        width: 95%;
+    }
+}
+
+/* EXPLICAÇÃO DO MEU CÓDIGO (PORTFÓLIO)
+📌 Estrutura geral do HTML
+
+No meu projeto eu usei HTML para montar toda a estrutura do site.
+Ele é dividido em partes como <head> e <body>. O <head> serve para
+configurações, como título da página, ligação com o CSS e fontes externas. 
+Já o <body> é onde fica todo o conteúdo visível do site.
+
+* Uso do CSS
+
+Eu utilizei um arquivo CSS separado para deixar o site mais bonito e organizado. 
+Com ele eu defini cores, fontes, tamanhos, espaçamentos, bordas e efeitos visuais.
+Também usei CSS para criar animações e melhorar a aparência geral do portfólio.
+
+* Fundo animado (particles)
+
+No meu site eu adicionei um <canvas> que cria um fundo com partículas animadas.
+Isso foi feito com JavaScript e serve para deixar o site mais moderno e dinâmico,
+dando um efeito visual de movimento no fundo.
+
+* Cabeçalho (Header)
+
+No cabeçalho eu coloquei a parte principal de apresentação,
+com meu nome, minha foto e a logo do IFTO. Essa parte serve para 
+identificar quem sou eu logo no início do site e dar uma boa primeira impressão.
+
+* Menu de navegação
+
+Eu criei um menu com links que levam para cada parte do site, 
+como “Sobre”, “Atuação”, “Conquistas”, “Objetivo” e “Redes Sociais”.
+Ele ajuda o usuário a navegar facilmente pela página.
+
+* Seção Sobre Mim
+
+Nessa parte eu falo um pouco sobre mim, minha idade, 
+meus interesses e minha relação com tecnologia, programação 
+e criação de conteúdo. É uma introdução pessoal.
+
+* Seção de Atuação
+
+Aqui eu mostro minhas atividades e experiências,
+como participação em projetos, monitorias e funções 
+que já exerci. Essa parte mostra minha atuação dentro e fora da escola.
+
+* Seção de Conquistas
+
+Nessa seção eu apresento algumas das minhas medalhas e resultados 
+em olimpíadas e competições. Ela representa meu
+esforço e minhas conquistas ao longo do tempo.
+
+* Objetivo
+
+Aqui eu explico meus objetivos futuros, como concluir meus estudos no IFTO e
+cursar Licenciatura em Matemática. 
+Também falo sobre meu desejo de contribuir com a educação.
+
+* Redes sociais
+
+Nessa parte eu coloco meus perfis nas redes sociais como Instagram, 
+YouTube, TikTok e Kwai. Eu organizei isso em cards para ficar mais visual e fácil de acessar.
+
+* JavaScript (interatividade)
+
+Eu usei JavaScript para deixar o site mais interativo. Ele controla as 
+partículas animadas do fundo e também cria um efeito de medalha que 
+aparece quando a seção de conquistas é acessada ou clicada.
+
+* Efeito da medalha
+
+Quando o usuário entra na seção de conquistas, 
+aparece uma animação de medalha no centro da tela. 
+Isso foi feito para destacar essa parte do meu portfólio.
+
+* Conclusão
+
+Esse projeto foi feito para praticar HTML, 
+CSS e JavaScript. O objetivo foi criar um portfólio organizado, 
+bonito e funcional, mostrando minhas informações pessoais, conquistas e objetivos de forma criativa e visual.*/
