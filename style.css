@@ -46,7 +46,7 @@ header, nav, section, footer{
 
     padding:25px;
 
-    background:rgba(255,255,255,0.07);
+    background:rgba(8, 72, 250, 0.07);
     backdrop-filter:blur(10px);
 
     border-radius:25px;
