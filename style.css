@@ -384,22 +384,90 @@ h1 {
     }
 }
 
+
+.menu-toggle{
+    display:none;
+}
+
 /* =========================
    RESPONSIVIDADE
 ========================= */
 @media (max-width: 768px) {
+
     .cabecalho {
         flex-direction: column;
         text-align: center;
     }
 
-    nav ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
     section {
         width: 95%;
+    }
+
+    /* Botão do menu */
+    .menu-toggle{
+        display:block;
+        text-align:right;
+        padding:15px 20px;
+        font-size:35px;
+        color:white;
+        cursor:pointer;
+    }
+
+    /* Menu escondido */
+    nav ul{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        background:rgba(41,10,243,0.95);
+        gap:0;
+    }
+
+    /* Menu aberto */
+    nav ul.active{
+        display:flex;
+    }
+
+    nav ul li{
+        width:100%;
+        text-align:center;
+        padding:15px 0;
+    }
+}
+/* =========================
+   MENU HAMBÚRGUER
+========================= */
+
+/* Botão escondido no computador */
+.menu-toggle{
+    display:none;
+    font-size:32px;
+    color:white;
+    cursor:pointer;
+    padding:15px 20px;
+}
+
+/* Celulares */
+@media (max-width:768px){
+
+    .menu-toggle{
+        display:block;
+        text-align:right;
+    }
+
+    nav ul{
+        display:none;
+        flex-direction:column;
+        width:100%;
+        background:rgba(41,10,243,0.95);
+    }
+
+    nav ul.active{
+        display:flex;
+    }
+
+    nav ul li{
+        text-align:center;
+        padding:15px 0;
     }
 }
 
